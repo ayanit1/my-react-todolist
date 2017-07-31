@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AddTodo = ({ submitTodo }) => {(
+const AddTodo = ({ submitTodo }) => {
   let input;
 
   return (
