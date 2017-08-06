@@ -5,17 +5,30 @@ import { shallow, mount } from 'enzyme';
 import AddTodo from '.';
 
 describe('AddTodo component', () => {
+  let component;
+  const submitMock = jest.fn();
+
+  beforeEach(() => {
+    component = shallow(
+      <AddTodo
+        submitTodo={submitMock}
+      />,
+    );
+  });
+
   it('should render sucessfully', () => {
-    const component = shallow(<AddTodo />);
     expect(component.exists()).toEqual(true);
   });
 
   it('should have one input', () => {
-    const component = shallow(<AddTodo />);
     expect(component.find('.todo-input').length).toEqual(1);
   });
 
   describe('Add todo button', () => {
+    it('should exist', () => {
+      expect(component.find('.todo-submit').length).toEqual(1);
+    });
+
     it('should call the submitTodo function when clicked', () => {
       const submitMock = jest.fn();
       const component = mount(<AddTodo submitTodo={submitMock} />);

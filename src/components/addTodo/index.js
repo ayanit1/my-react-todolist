@@ -29,7 +29,7 @@ const AddTodo = ({ submitTodo }) => {
   );
 };
 
-AddTodo.PropTypes = {
+AddTodo.propTypes = {
   submitTodo: PropTypes.func.isRequired,
 };
 
